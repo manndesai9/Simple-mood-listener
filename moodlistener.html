@@ -1,0 +1,50 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Document</title>
+    <style>
+        body {
+                transition: background-color 0.5s ease;
+            }
+
+    </style>
+</head>
+<body>
+        <h2>How are you feeling today?</h2>
+        <input type="text" id="moodinput" placeholder="type your mood here">
+        <button id="checkmood">Check mood</button>
+        <p id="response"></p>
+        <script>
+            const moodinput = document.getElementById("moodinput");
+            const checkbox = document.getElementById("checkmood");
+            const response = document.getElementById("response");
+
+            checkbox.addEventListener("click",()=>{
+                const mood = moodinput.value.toLowerCase().trim();
+                if(mood === "happy"){
+                    response.textContent = "\u{1F604} wow, spread those energies";
+                    document.body.style.backgroundColor = "yellow";
+                }
+                else if(mood === "sad"){
+                    response.textContent = "😢 oh, poor. this time will pass";
+                    document.body.style.backgroundColor = "lightgreen";
+                }
+                else if(mood === "tired"){
+                    response.textContent = "😴have some rest, you've got tomorrow";
+                    document.body.style.backgroundColor = "aqua";
+                }
+                else if(mood === "angry"){
+                    response.textContent = "😡calm down, just be alone for a while, we'll find solutions later";
+                    document.body.style.backgroundColor = "brown";
+                }
+                else{
+                    response.textContent = "🤔kinda interesting though";
+                    document.body.style.backgroundColor = "pink";
+                }
+
+            });
+        </script>
+</body>
+</html>
